@@ -1,30 +1,87 @@
-# Vibe Commerce - Mock E-Com Cart
+# 🛒 Mock E-Commerce Cart — Full Stack Assignment
 
-This is a full-stack mock e-commerce shopping cart application built for the Vibe Commerce screening assignment. It includes a Node.js/Express backend API, a SQLite database, and a React frontend.
+A fully functional **full-stack shopping cart application** built as part of the **Vibe Commerce Full-Stack Screening Assignment**.  
+This project demonstrates a complete **UI → API → DB** workflow simulating an e-commerce cart with a mock checkout flow.
 
-## 🚀 Features
-
-* **Product Listing:** Fetches and displays a grid of mock products from the database.
-* **Shopping Cart:** Full "Add to Cart" and "Remove from Cart" functionality.
-* **Dynamic Totals:** The cart dynamically calculates and displays the total price.
-* **Mock Checkout:** A simple checkout form that, upon submission, clears the cart and displays a mock receipt.
-* **Database Persistence:** The cart state is saved in a SQLite database, persisting between page reloads.
-
-## 🛠 Tech Stack
-
-* **Frontend:** React, Axios
-* **Backend:** Node.js, Express
-* **Database:** SQLite
+🔗 **GitHub Repository:** https://github.com/swaroopms658/assignment
 
 ---
 
-## Setup & Installation
+## 🚀 Tech Stack
 
-Follow these steps to run the project locally.
+| Layer | Technology |
+|-------|-------------|
+| Frontend | React (JavaScript), Axios |
+| Backend | Node.js, Express.js |
+| Database | SQLite (for persistence) |
+| Architecture | REST API |
 
-### 1. Clone the Repository
+---
 
-(You will replace this with your actual GitHub repo link)
+## ✨ Features
+
+### 🧑‍💻 Frontend (React)
+- Product listing grid UI
+- Add to Cart
+- Cart page with:
+  - Update quantity
+  - Remove item
+  - Auto total calculation
+- Checkout modal (name + email)
+- Mock payment → Receipt popup
+- Fully responsive design
+
+### 🔧 Backend (Node + Express + SQLite)
+| Method | Endpoint | Description |
+|--------|-----------|----------------|
+| GET | `/api/products` | Fetch products (5–10 mock items) |
+| POST | `/api/cart` | Add to cart `{ productId, qty }` |
+| DELETE | `/api/cart/:id` | Remove cart item |
+| PATCH | `/api/cart/:id` | Update quantity `{ qty }` |
+| GET | `/api/cart` | Get cart with total |
+| POST | `/api/checkout` | Process mock checkout & generate receipt |
+
+### ⭐ Bonus Implementations
+- SQLite DB persistence for Products, Cart & Orders
+- Optional Fake Store API support → `GET /api/products?fake=true`
+- Error handling responses on all endpoints
+
+---
+
+## 📂 Project Structure
+
+assignment/
+│
+├── backend/ # Node + Express + SQLite API
+│ ├── index.js
+│ ├── db.js
+│ ├── package.json
+│ └── README.md
+│
+├── frontend/ # React UI
+│ ├── src/
+│ ├── package.json
+│ └── README.md
+│
+└── README.md # Main Documentation (this file)
+
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repository
+
 ```bash
-https://github.com/swaroopms658/assignment
-cd vibe-commerce-cart
+git clone https://github.com/swaroopms658/assignment
+cd assignment
+
+cd backend
+npm install
+npm run seed     # seed initial products into SQLite
+npm run dev      # start server with nodemon
+
+cd frontend
+npm install
+npm start
+
