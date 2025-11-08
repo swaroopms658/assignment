@@ -107,7 +107,8 @@ DEMO AND SCREENSHOTS
 
 | Product Page | Cart & Checkout | Receipt Modal |
 | :---: | :---: | :---: |
-| ![Home Page](vibe-commerce-cart\screenshots\products.png) | ![Cart & Checkout](vibe-commerce-cart\screenshots\cart.png) | ![Result](vibe-commerce-cart\screenshots\result.png) |
+| ![Home Page](./screenshots/home.png)
+ | ![Cart & Checkout](vibe-commerce-cart\screenshots\cart.png) | ![Result](vibe-commerce-cart\screenshots\result.png) |
 
 Adjust ports or environment variables if needed (e.g., proxy in frontend package.json or BACKEND_URL env var).
 
