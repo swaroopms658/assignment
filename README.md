@@ -1,87 +1,120 @@
-# 🛒 Mock E-Commerce Cart — Full Stack Assignment
+# Mock E-Commerce Cart — Full‑Stack Assignment
 
-A fully functional **full-stack shopping cart application** built as part of the **Vibe Commerce Full-Stack Screening Assignment**.  
-This project demonstrates a complete **UI → API → DB** workflow simulating an e-commerce cart with a mock checkout flow.
+A simple full‑stack shopping cart application built for the Vibe Commerce Full‑Stack screening assignment.  
+This repository demonstrates a complete UI → API → DB workflow: React frontend, Node/Express API, and SQLite persistence. It includes a mock checkout flow and basic order receipt generation.
 
-🔗 **GitHub Repository:** https://github.com/swaroopms658/assignment
+Repository: https://github.com/swaroopms658/assignment
 
----
+## Table of Contents
+- [Tech Stack](#tech-stack)
+- [Features](#features)
+- [API Endpoints](#api-endpoints)
+- [Project Structure](#project-structure)
+- [Installation & Running Locally](#installation--running-locally)
+- [Scripts](#scripts)
+- [Notes](#notes)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## 🚀 Tech Stack
+## Tech Stack
+- Frontend: React (JavaScript), Axios
+- Backend: Node.js, Express
+- Database: SQLite (file persistence)
+- Architecture: REST API
 
-| Layer | Technology |
-|-------|-------------|
-| Frontend | React (JavaScript), Axios |
-| Backend | Node.js, Express.js |
-| Database | SQLite (for persistence) |
-| Architecture | REST API |
-
----
-
-## ✨ Features
-
-### 🧑‍💻 Frontend (React)
-- Product listing grid UI
-- Add to Cart
+## Features
+Frontend
+- Product listing grid
+- Add product to cart
 - Cart page with:
-  - Update quantity
+  - Update item quantity
   - Remove item
-  - Auto total calculation
-- Checkout modal (name + email)
-- Mock payment → Receipt popup
-- Fully responsive design
+  - Auto-calculated totals
+- Checkout modal (collects name + email)
+- Mock payment flow → receipt popup
+- Responsive layout
 
-### 🔧 Backend (Node + Express + SQLite)
-| Method | Endpoint | Description |
-|--------|-----------|----------------|
-| GET | `/api/products` | Fetch products (5–10 mock items) |
-| POST | `/api/cart` | Add to cart `{ productId, qty }` |
-| DELETE | `/api/cart/:id` | Remove cart item |
-| PATCH | `/api/cart/:id` | Update quantity `{ qty }` |
-| GET | `/api/cart` | Get cart with total |
-| POST | `/api/checkout` | Process mock checkout & generate receipt |
+Backend
+- Persistent storage using SQLite for Products, Cart, and Orders
+- Error handling for endpoints
+- Optional Fake Store API support for product fetching
 
-### ⭐ Bonus Implementations
-- SQLite DB persistence for Products, Cart & Orders
-- Optional Fake Store API support → `GET /api/products?fake=true`
-- Error handling responses on all endpoints
+## API Endpoints
+The backend exposes the following REST endpoints:
 
----
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | /api/products | List products (supports `?fake=true` to use Fake Store API) |
+| GET | /api/cart | Get cart items with totals |
+| POST | /api/cart | Add item to cart — body: `{ productId, qty }` |
+| PATCH | /api/cart/:id | Update cart item quantity — body: `{ qty }` |
+| DELETE | /api/cart/:id | Remove an item from the cart |
+| POST | /api/checkout | Process mock checkout and create a receipt |
 
-## 📂 Project Structure
+All endpoints return appropriate success/error JSON responses.
 
+## Project Structure
 assignment/
-│
-├── backend/ # Node + Express + SQLite API
-│ ├── index.js
-│ ├── db.js
-│ ├── package.json
-│ └── README.md
-│
-├── frontend/ # React UI
-│ ├── src/
-│ ├── package.json
-│ └── README.md
-│
-└── README.md # Main Documentation (this file)
+```
+backend/        # Node + Express + SQLite API
+  ├─ index.js
+  ├─ db.js
+  ├─ package.json
+  └─ README.md
 
+frontend/       # React application
+  ├─ src/
+  ├─ package.json
+  └─ README.md
 
----
+README.md       # This file
+```
 
-## ⚙️ Installation & Setup
+## Installation & Running Locally
 
-### 1️⃣ Clone the repository
-
+1. Clone the repository
 ```bash
-git clone https://github.com/swaroopms658/assignment
+git clone https://github.com/swaroopms658/assignment.git
 cd assignment
+```
 
+2. Backend
+```bash
 cd backend
 npm install
-npm run seed     # seed initial products into SQLite
-npm run dev      # start server with nodemon
+npm run seed     # (if provided) seeds initial products into SQLite
+npm run dev      # starts server (nodemon)
+# or: npm start  # production mode
+```
 
-cd frontend
+3. Frontend
+```bash
+cd ../frontend
 npm install
 npm start
+```
 
+Open the frontend in your browser (usually http://localhost:3000). The frontend communicates with the backend (commonly http://localhost:4000 or the port set in backend/index.js).
+
+## Scripts
+Check each package.json for available scripts:
+- backend/package.json: start, dev, seed (example)
+- frontend/package.json: start, build, test (example)
+
+Adjust ports or environment variables if needed (e.g., proxy in frontend package.json or BACKEND_URL env var).
+
+## Notes & Tips
+- SQLite file is used for persistence — you can inspect it with any SQLite client.
+- The seed script (backend) populates initial mock products.
+- If using the Fake Store API option, ensure outbound network requests are allowed.
+
+## Contributing
+Contributions are welcome. Please open issues or pull requests with a clear description of the change. For larger changes, open an issue first to discuss design.
+
+## License
+This project does not include a formal license file. Add one (e.g., MIT) if you wish to permit reuse.
+
+## Contact
+Maintainer: swaroopms658  
+Repo: https://github.com/swaroopms658/assignment
