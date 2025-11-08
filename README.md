@@ -105,10 +105,7 @@ Check each package.json for available scripts:
 DEMO AND SCREENSHOTS
 ## 📸 Screenshots
 
-| Product Page | Cart & Checkout | Receipt Modal |
-| :---: | :---: | :---: |
-| ![Home](https://raw.githubusercontent.com/swaroopms658/assignment/master/screenshots/home.png)
- | ![Cart & Checkout](vibe-commerce-cart\screenshots\cart.png) | ![Result](vibe-commerce-cart\screenshots\result.png) |
+<img width="1585" height="698" alt="Mainpage" src="https://github.com/user-attachments/assets/2000eca4-808a-428e-8574-daa575925ba6" />
 
-Adjust ports or environment variables if needed (e.g., proxy in frontend package.json or BACKEND_URL env var).
-
+<img width="516" height="864" alt="cart" src="https://github.com/user-attachments/assets/fabb9d3f-ef55-4d09-8bd0-177a07aa2168" />
+<img width="717" height="481" alt="result" src="https://github.com/user-attachments/assets/e605b0fd-7e07-4238-bd87-9afca4a95c4c" />
