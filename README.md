@@ -13,8 +13,7 @@ Repository: https://github.com/swaroopms658/assignment
 - [Installation & Running Locally](#installation--running-locally)
 - [Scripts](#scripts)
 - [Notes](#notes)
-- [Contributing](#contributing)
-- [License](#license)
+- [Demo](#demoss)
 - [Contact](#contact)
 
 ## Tech Stack
