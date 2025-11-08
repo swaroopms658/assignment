@@ -102,19 +102,13 @@ Check each package.json for available scripts:
 - backend/package.json: start, dev, seed (example)
 - frontend/package.json: start, build, test (example)
 
+DEMO AND SCREENSHOTS
+## 📸 Screenshots
+
+| Product Page | Cart & Checkout | Receipt Modal |
+| :---: | :---: | :---: |
+| ![Home Page](./screenshots/home.png)
+ | ![Cart & Checkout](vibe-commerce-cart\screenshots\cart.png) | ![Result](vibe-commerce-cart\screenshots\result.png) |
+
 Adjust ports or environment variables if needed (e.g., proxy in frontend package.json or BACKEND_URL env var).
 
-## Notes & Tips
-- SQLite file is used for persistence — you can inspect it with any SQLite client.
-- The seed script (backend) populates initial mock products.
-- If using the Fake Store API option, ensure outbound network requests are allowed.
-
-## Contributing
-Contributions are welcome. Please open issues or pull requests with a clear description of the change. For larger changes, open an issue first to discuss design.
-
-## License
-This project does not include a formal license file. Add one (e.g., MIT) if you wish to permit reuse.
-
-## Contact
-Maintainer: swaroopms658  
-Repo: https://github.com/swaroopms658/assignment
